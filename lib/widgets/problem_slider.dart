@@ -13,80 +13,90 @@ class _ProblemSliderState extends State<ProblemSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            sentences[_index].acquiredLanguageSentence,
-            style: const TextStyle(fontSize: 20),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20),
-          Text(
-            sentences[_index].nativeLanguageSentence,
-            style: const TextStyle(fontSize: 20),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20),
-          Row(
+    return Stack(
+      children: [
+        Center(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Ink(
-                decoration: const ShapeDecoration(
-                  color: Colors.amber,
-                  shape: CircleBorder(),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_left),
-                  color: Colors.white,
-                  onPressed: () {
-                    if (_index > 0) {
-                      setState(() {
-                        _index--;
-                      });
-                    }
-                  },
-                ),
+              Text(
+                sentences[_index].acquiredLanguageSentence,
+                style: const TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(width: 20),
-              Ink(
-                decoration: const ShapeDecoration(
-                  color: Colors.amberAccent,
-                  shape: CircleBorder(),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.check),
-                  color: Colors.white,
-                  onPressed: () {
-                    if (_index > 0) {
-                      _index--;
-                    }
-                  },
-                ),
+              const SizedBox(height: 20),
+              Text(
+                sentences[_index].nativeLanguageSentence,
+                style: const TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(width: 20),
-              Ink(
-                decoration: const ShapeDecoration(
-                  color: Colors.amber,
-                  shape: CircleBorder(),
-                ),
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_right),
-                  color: Colors.white,
-                  onPressed: () {
-                    if (_index < sentences.length - 1) {
-                      setState(() {
-                        _index++;
-                      });
-                    }
-                  },
-                ),
-              ),
+              const SizedBox(height: 20),
             ],
           ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 50),
+          child: Container(
+            alignment: Alignment.bottomCenter,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Ink(
+                  decoration: const ShapeDecoration(
+                    color: Colors.amber,
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_left),
+                    color: Colors.white,
+                    onPressed: () {
+                      if (_index > 0) {
+                        setState(() {
+                          _index--;
+                        });
+                      }
+                    },
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Ink(
+                  decoration: const ShapeDecoration(
+                    color: Colors.amberAccent,
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.check),
+                    color: Colors.white,
+                    onPressed: () {
+                      if (_index > 0) {
+                        _index--;
+                      }
+                    },
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Ink(
+                  decoration: const ShapeDecoration(
+                    color: Colors.amber,
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_right),
+                    color: Colors.white,
+                    onPressed: () {
+                      if (_index < sentences.length - 1) {
+                        setState(() {
+                          _index++;
+                        });
+                      }
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
