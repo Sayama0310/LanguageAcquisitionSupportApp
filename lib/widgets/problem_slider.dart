@@ -10,6 +10,7 @@ class ProblemSlider extends StatefulWidget {
 
 class _ProblemSliderState extends State<ProblemSlider> {
   int _index = 0;
+  bool _ok = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,7 @@ class _ProblemSliderState extends State<ProblemSlider> {
                       if (_index > 0) {
                         setState(() {
                           _index--;
+                          _ok = false;
                         });
                       }
                     },
@@ -60,17 +62,17 @@ class _ProblemSliderState extends State<ProblemSlider> {
                 ),
                 const SizedBox(width: 20),
                 Ink(
-                  decoration: const ShapeDecoration(
-                    color: Colors.amberAccent,
-                    shape: CircleBorder(),
+                  decoration: ShapeDecoration(
+                    color: _ok ? Colors.amberAccent : Colors.grey,
+                    shape: const CircleBorder(),
                   ),
                   child: IconButton(
                     icon: const Icon(Icons.check),
                     color: Colors.white,
                     onPressed: () {
-                      if (_index > 0) {
-                        _index--;
-                      }
+                      setState(() {
+                        _ok = !_ok;
+                      });
                     },
                   ),
                 ),
@@ -87,6 +89,7 @@ class _ProblemSliderState extends State<ProblemSlider> {
                       if (_index < sentences.length - 1) {
                         setState(() {
                           _index++;
+                          _ok = false;
                         });
                       }
                     },
