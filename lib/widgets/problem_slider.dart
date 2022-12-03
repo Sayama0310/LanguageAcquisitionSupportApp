@@ -21,17 +21,22 @@ class _ProblemSliderState extends State<ProblemSlider> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                sentences[_index].acquiredLanguageSentence,
-                style: const TextStyle(fontSize: 20),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
-              Text(
                 sentences[_index].nativeLanguageSentence,
                 style: const TextStyle(fontSize: 20),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
+              Visibility(
+                visible: _ok,
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                child: Text(
+                  sentences[_index].acquiredLanguageSentence,
+                  style: const TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ],
           ),
         ),
