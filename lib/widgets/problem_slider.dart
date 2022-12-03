@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:speaking_exercise/sample_data/sentences.dart';
 
 class ProblemSlider extends StatefulWidget {
@@ -24,7 +25,7 @@ class _ProblemSliderState extends State<ProblemSlider> {
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Text(
                   sentences[_index].nativeLanguageSentence,
-                  style: const TextStyle(fontSize: 20),
+                  style: GoogleFonts.zenMaruGothic(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -38,7 +39,7 @@ class _ProblemSliderState extends State<ProblemSlider> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Text(
                       sentences[_index].acquiredLanguageSentence,
-                      style: const TextStyle(fontSize: 20),
+                      style: GoogleFonts.nunito(fontSize: 20),
                       textAlign: TextAlign.center,
                     ),
                   )),
