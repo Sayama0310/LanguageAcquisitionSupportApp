@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/problem_slider.dart';
+import '../widget/problem_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
