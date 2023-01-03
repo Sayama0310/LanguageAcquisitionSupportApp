@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:speaking_exercise/sample_data/sentences.dart';
+
+import '../dataset/sentences.dart';
 
 class ProblemSlider extends StatefulWidget {
   const ProblemSlider({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:speaking_exercise/widgets/problem_slider.dart';
+
+import '../widgets/problem_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
