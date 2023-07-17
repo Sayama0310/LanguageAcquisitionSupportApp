@@ -1,16 +1,8 @@
-# speaking_exercise
+# Trial Version of Flush
 
-A new Flutter project.
+Prior to developing the language learning app called "Flush," we have created a very simple CLI application using Python to verify if it seems to work well.
 
-## Getting Started
+The concept is to support language acquisition by reviewing registered English sentences at appropriate intervals. In this trial version, we want to test the following two points:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Does it truly provide support for language acquisition?
+2. What is the suitable frequency for reviewing the sentences?
